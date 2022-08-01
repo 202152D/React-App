@@ -1,0 +1,12 @@
+FROM node:alpine
+
+# set the working direction
+WORKDIR /App
+
+# install app dependencies
+COPY . ./
+
+RUN npm install
+
+# start app
+CMD ["npm", "start"]
