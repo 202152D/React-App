@@ -1,0 +1,22 @@
+version: '3'
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /App/node_modules
+      - C:\App\frontend\src:/App/src
+  tests:
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /App/node_modules
+      - C:\App\frontend\src:/App/src
+    command: ['npm','run', 'test']
+
+    
