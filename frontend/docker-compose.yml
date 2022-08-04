@@ -18,5 +18,3 @@ services:
       - /App/node_modules
       - C:\App\frontend\src:/App/src
     command: ['npm','run', 'test']
-
-    
